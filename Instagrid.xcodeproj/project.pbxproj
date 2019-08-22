@@ -40,7 +40,6 @@
 		657F403722F720F200D68829 = {
 			isa = PBXGroup;
 			children = (
-				BB53C419230EA82B002DECA7 /* Default-568h@2x.png */,
 				657F404222F720F200D68829 /* Instagrid */,
 				657F404122F720F200D68829 /* Products */,
 			);
@@ -91,6 +90,7 @@
 		657F405822F75EEB00D68829 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB53C419230EA82B002DECA7 /* Default-568h@2x.png */,
 				657F404322F720F200D68829 /* AppDelegate.swift */,
 				657F404A22F720F400D68829 /* Assets.xcassets */,
 				657F404C22F720F400D68829 /* LaunchScreen.storyboard */,
@@ -319,7 +319,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				DEVELOPMENT_TEAM = RT62BPUMZ6;
+				INFOPLIST_FILE = "$(SRCROOT)/Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +337,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				DEVELOPMENT_TEAM = RT62BPUMZ6;
+				INFOPLIST_FILE = "$(SRCROOT)/Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
