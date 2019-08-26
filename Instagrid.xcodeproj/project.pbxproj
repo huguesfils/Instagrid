@@ -13,6 +13,7 @@
 		657F404B22F720F400D68829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657F404A22F720F400D68829 /* Assets.xcassets */; };
 		657F404E22F720F400D68829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657F404C22F720F400D68829 /* LaunchScreen.storyboard */; };
 		BB53C41A230EA82B002DECA7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB53C419230EA82B002DECA7 /* Default-568h@2x.png */; };
+		BBCD51532313DD380006DAAC /* ThirstyScriptExtraBoldDemo.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBCD51522313DD380006DAAC /* ThirstyScriptExtraBoldDemo.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		657F404D22F720F400D68829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		657F404F22F720F400D68829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB53C419230EA82B002DECA7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BBCD51522313DD380006DAAC /* ThirstyScriptExtraBoldDemo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstyScriptExtraBoldDemo.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		657F405822F75EEB00D68829 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BBCD51522313DD380006DAAC /* ThirstyScriptExtraBoldDemo.otf */,
 				BB53C419230EA82B002DECA7 /* Default-568h@2x.png */,
 				657F404322F720F200D68829 /* AppDelegate.swift */,
 				657F404A22F720F400D68829 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657F404E22F720F400D68829 /* LaunchScreen.storyboard in Resources */,
+				BBCD51532313DD380006DAAC /* ThirstyScriptExtraBoldDemo.otf in Resources */,
 				BB53C41A230EA82B002DECA7 /* Default-568h@2x.png in Resources */,
 				657F404B22F720F400D68829 /* Assets.xcassets in Resources */,
 				657F404922F720F200D68829 /* Main.storyboard in Resources */,
