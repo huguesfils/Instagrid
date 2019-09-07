@@ -77,6 +77,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMO-ik-df9">
+                                <rect key="frame" x="110.66666666666669" y="202" width="154" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gMO-ik-df9" secondAttribute="height" multiplier="77:12" id="jWG-Dv-JDX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -88,15 +97,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hwj-s5-7Ge" secondAttribute="trailing" constant="20" id="HvC-t7-oaI"/>
                             <constraint firstItem="QbD-nT-dq0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IW9-fI-WFt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7IR-Pu-5wb" secondAttribute="bottom" constant="10" id="KX8-3X-lQm"/>
+                            <constraint firstItem="hwj-s5-7Ge" firstAttribute="top" secondItem="gMO-ik-df9" secondAttribute="bottom" constant="22" id="Lgn-pI-w8f"/>
                             <constraint firstItem="7IR-Pu-5wb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hwj-s5-7Ge" secondAttribute="bottom" priority="750" constant="10" id="MDf-mC-RsW"/>
                             <constraint firstItem="7IR-Pu-5wb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hW0-gb-g20"/>
+                            <constraint firstItem="gMO-ik-df9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lDG-0I-WDP"/>
+                            <constraint firstItem="gMO-ik-df9" firstAttribute="top" relation="lessThanOrEqual" secondItem="QbD-nT-dq0" secondAttribute="bottom" priority="250" constant="107.67" id="ySp-Jf-KSK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.48275862068965" y="132"/>
+            <point key="canvasLocation" x="133.59999999999999" y="131.52709359605913"/>
         </scene>
     </scenes>
     <resources>
