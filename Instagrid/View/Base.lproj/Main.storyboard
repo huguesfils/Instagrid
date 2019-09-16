@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -71,7 +72,7 @@
                                     <constraint firstAttribute="height" constant="49" id="K16-ve-Rjf"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="equalSpacing" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-Pu-5wb">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-Pu-5wb">
                                 <rect key="frame" x="20" y="762" width="374" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeA-iC-Lee">
@@ -97,10 +98,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xeA-iC-Lee" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="7qe-jW-t3n"/>
-                                    <constraint firstItem="2xX-aG-nDI" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="CMq-iy-ngA"/>
-                                    <constraint firstAttribute="height" constant="80" id="ZFN-Ii-3N2"/>
-                                    <constraint firstItem="GbV-TY-ddl" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="gqU-o6-7TV"/>
+                                    <constraint firstItem="xeA-iC-Lee" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="EPa-Y1-JSg"/>
+                                    <constraint firstAttribute="height" constant="80" id="M7h-cp-G3P"/>
+                                    <constraint firstItem="2xX-aG-nDI" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="YFG-S2-ttA"/>
+                                    <constraint firstItem="GbV-TY-ddl" firstAttribute="height" secondItem="7IR-Pu-5wb" secondAttribute="height" id="vxJ-Ne-nqZ"/>
                                 </constraints>
                                 <variation key="heightClass=compact" spacing="67"/>
                                 <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
@@ -110,18 +111,18 @@
                         <constraints>
                             <constraint firstItem="hwj-s5-7Ge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ua-Z6-XNy"/>
                             <constraint firstItem="hwj-s5-7Ge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3iM-g5-hlR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7IR-Pu-5wb" secondAttribute="trailing" constant="20" id="EbV-eW-TVa"/>
                             <constraint firstItem="RH4-u8-Pxn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Erq-AC-Xsa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hwj-s5-7Ge" secondAttribute="trailing" constant="20" id="JZD-Bz-k6Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7IR-Pu-5wb" secondAttribute="bottom" constant="20" id="N9z-ue-xTQ"/>
                             <constraint firstItem="QbD-nT-dq0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Obh-Px-dMF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RH4-u8-Pxn" secondAttribute="trailing" constant="20" id="PCQ-LM-pkl"/>
-                            <constraint firstItem="7IR-Pu-5wb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PE4-xG-Fhb"/>
                             <constraint firstItem="hwj-s5-7Ge" firstAttribute="top" secondItem="RH4-u8-Pxn" secondAttribute="bottom" constant="20" id="QQK-I7-C5o"/>
                             <constraint firstItem="RH4-u8-Pxn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Spj-9Y-P21"/>
                             <constraint firstItem="hwj-s5-7Ge" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TWQ-jv-OYC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7IR-Pu-5wb" secondAttribute="trailing" constant="20" id="WNm-ac-pe0"/>
                             <constraint firstItem="QbD-nT-dq0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dX9-32-prW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7IR-Pu-5wb" secondAttribute="bottom" constant="20" id="qmk-qO-oiL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QbD-nT-dq0" secondAttribute="trailing" constant="10" id="r41-9d-4Uw"/>
+                            <constraint firstItem="7IR-Pu-5wb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rRB-jd-nXg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
