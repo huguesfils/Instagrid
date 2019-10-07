@@ -10,23 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var stackViewTop: UIStackView!
+    
+    @IBOutlet weak var stackViewBottom: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var swipeLabel: UILabel!
-    @IBOutlet weak var chevronLabel: UILabel!
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape{
             self.swipeLabel.text = "Swipe left to share"
-            self.chevronLabel.text = "<"
+//           rajouter chevron
         }else{
             self.swipeLabel.text = "Swipe up to share"
-            self.chevronLabel.text = "^"
+            
             
         }
     }
+    
+    
+    @IBAction func tapLayout1(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapLayout2(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapLayout3(_ sender: UIButton) {
+    }
+    
+    
+    
 }
 
