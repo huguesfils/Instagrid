@@ -20,14 +20,16 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var swipeLabel: UILabel!
+    @IBOutlet weak var swipeChevron: UIImageView!
+    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape{
             self.swipeLabel.text = "Swipe left to share"
-//           rajouter chevron
+            self.swipeChevron.image = UIImage(systemName: "chevron.left")
         }else{
             self.swipeLabel.text = "Swipe up to share"
-            
+            self.swipeChevron.image = UIImage(systemName: "chevron.up")
             
         }
     }
