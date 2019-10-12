@@ -280,7 +280,6 @@
                     </view>
                     <connections>
                         <outlet property="stackViewBottom" destination="3OK-QA-mQX" id="aBz-PG-ei9"/>
-                        <outlet property="stackViewCenter" destination="AoA-40-HXf" id="9Pc-Ax-tQI"/>
                         <outlet property="stackViewTop" destination="PlC-i3-cA2" id="44D-H8-Mew"/>
                         <outlet property="swipeChevron" destination="6an-Xw-YpQ" id="hyR-Yk-BgS"/>
                         <outlet property="swipeLabel" destination="54L-HV-DnK" id="115-GB-6EY"/>
