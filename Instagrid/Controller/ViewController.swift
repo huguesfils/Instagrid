@@ -30,18 +30,29 @@ class ViewController: UIViewController {
         }else{
             self.swipeLabel.text = "Swipe up to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.up")
-            
         }
     }
     
     
     @IBAction func tapLayout1(_ sender: UIButton) {
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        customView.backgroundColor = UIColor.white
+        self.stackViewTop.addArrangedSubview(customView)
+        let customView2 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        customView2.backgroundColor = UIColor.white
+        self.stackViewBottom.addArrangedSubview(customView2)
+        let customView3 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        customView3.backgroundColor = UIColor.white
+        self.stackViewBottom.addArrangedSubview(customView3)
+        
     }
     
     @IBAction func tapLayout2(_ sender: UIButton) {
+       
     }
     
     @IBAction func tapLayout3(_ sender: UIButton) {
+
     }
     
     

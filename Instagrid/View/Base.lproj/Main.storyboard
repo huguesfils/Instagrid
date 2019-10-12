@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,7 +160,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AoA-40-HXf" userLabel="Stack View Main">
                                         <rect key="frame" x="15" y="15" width="344" height="323"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlC-i3-cA2" userLabel="stackViewTop">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PlC-i3-cA2" userLabel="stackViewTop">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="154"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3OK-QA-mQX" userLabel="stackViewBottom">
@@ -281,7 +280,8 @@
                     </view>
                     <connections>
                         <outlet property="stackViewBottom" destination="3OK-QA-mQX" id="aBz-PG-ei9"/>
-                        <outlet property="stackViewTop" destination="PlC-i3-cA2" id="Sf1-b6-ESW"/>
+                        <outlet property="stackViewCenter" destination="AoA-40-HXf" id="9Pc-Ax-tQI"/>
+                        <outlet property="stackViewTop" destination="PlC-i3-cA2" id="44D-H8-Mew"/>
                         <outlet property="swipeChevron" destination="6an-Xw-YpQ" id="hyR-Yk-BgS"/>
                         <outlet property="swipeLabel" destination="54L-HV-DnK" id="115-GB-6EY"/>
                     </connections>
@@ -295,6 +295,6 @@
         <image name="Layout 1" width="27" height="27"/>
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
-        <image name="chevron.up" catalog="system" width="64" height="34"/>
+        <image name="chevron.up" catalog="system" width="64" height="36"/>
     </resources>
 </document>
