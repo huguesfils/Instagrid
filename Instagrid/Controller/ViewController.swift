@@ -10,18 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var stackViewTop: UIStackView!
-    
-    @IBOutlet weak var stackViewBottom: UIStackView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private enum Layout{
+        case layout1, layout2, layout3
     }
     
+    @IBOutlet weak var stackViewTop: UIStackView!
+    @IBOutlet weak var stackViewBottom: UIStackView!
     @IBOutlet weak var swipeLabel: UILabel!
     @IBOutlet weak var swipeChevron: UIImageView!
     
+    private var currentLayout = Layout.layout1
+    
+    var dictImage = [Int: UIImage]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createLayout1()
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape{
@@ -33,29 +38,77 @@ class ViewController: UIViewController {
         }
     }
     
+    func resetLayout(){
+        stackViewTop.subviews.forEach { (item) in
+            item.removeFromSuperview()
+        }
+        stackViewBottom.subviews.forEach { (item) in
+            item.removeFromSuperview()
+        }
+    }
+    
+    func createButton(buttonId: Int) -> UIButton{
+        let button = UIButton()
+        button.setImage(UIImage(named: "Plus"), for: .normal)
+        button.backgroundColor = UIColor.white
+        button.imageView?.contentMode = .scaleAspectFill
+        button.tag = buttonId
+        button.addTarget(self, action: #selector(pressedButton), for: .touchUpInside)
+        return button
+    }
+    
+    @objc func pressedButton(sender: UIButton){
+        print("ok: \(sender.tag)")
+//        sender.setImage = imagerécupérée
+//        dictImage [sender.tag] = image récupérée
+    }
+    
+    func createLayout1(){
+        self.stackViewTop.addArrangedSubview(createButton(buttonId: 1))
+        self.stackViewBottom.addArrangedSubview(createButton(buttonId: 2))
+        self.stackViewBottom.addArrangedSubview(createButton(buttonId: 3))
+    }
+    
+    func createLayout2(){
+        self.stackViewTop.addArrangedSubview(createButton(buttonId: 1))
+        self.stackViewTop.addArrangedSubview(createButton(buttonId: 2))
+        self.stackViewBottom.addArrangedSubview(createButton(buttonId: 3))
+    }
+    
+    func createLayout3(){
+        self.stackViewTop.addArrangedSubview(createButton(buttonId: 1))
+        self.stackViewTop.addArrangedSubview(createButton(buttonId: 2))
+        self.stackViewBottom.addArrangedSubview(createButton(buttonId: 3))
+        self.stackViewBottom.addArrangedSubview(createButton(buttonId: 4))
+    }
     
     @IBAction func tapLayout1(_ sender: UIButton) {
-        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        customView.backgroundColor = UIColor.white
-        self.stackViewTop.addArrangedSubview(customView)
-        let customView2 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        customView2.backgroundColor = UIColor.white
-        self.stackViewBottom.addArrangedSubview(customView2)
-        let customView3 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        customView3.backgroundColor = UIColor.white
-        self.stackViewBottom.addArrangedSubview(customView3)
+        if currentLayout != .layout1{
+            resetLayout()
+            createLayout1()
+            currentLayout = .layout1
+        }
         
     }
     
     @IBAction func tapLayout2(_ sender: UIButton) {
-       
+        if currentLayout != .layout2{
+            resetLayout()
+            createLayout2()
+            currentLayout = .layout2
+        }
     }
     
     @IBAction func tapLayout3(_ sender: UIButton) {
-
+        if currentLayout != .layout3{
+            resetLayout()
+            createLayout3()
+            currentLayout = .layout3
+        }
     }
     
     
     
 }
+
 
