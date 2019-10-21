@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private enum Layout{
         case layout1, layout2, layout3
@@ -20,12 +20,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeChevron: UIImageView!
     
     private var currentLayout = Layout.layout1
+    private var currentBtnTag = 0
     
+    let pickerController = UIImagePickerController()
     var dictImage = [Int: UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createLayout1()
+        pickerController.delegate = self
+        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        pickerController.sourceType = .photoLibrary
+        pickerController.modalPresentationStyle = UIModalPresentationStyle.currentContext
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -57,10 +63,27 @@ class ViewController: UIViewController {
         return button
     }
     
+    func getBtn(tag: Int) -> UIButton? {
+        for item in stackViewTop.subviews{
+            if item.tag == tag{
+            return item as? UIButton
+            }
+        }
+        for item in stackViewBottom.subviews{
+            if item.tag == tag{
+            return item as? UIButton
+           }
+        }
+        return nil
+    }
+    
     @objc func pressedButton(sender: UIButton){
-        print("ok: \(sender.tag)")
-//        sender.setImage = imagerécupérée
-//        dictImage [sender.tag] = image récupérée
+        currentBtnTag = sender.tag
+        showPickerController()
+    }
+    
+    func showPickerController() {
+        present(pickerController, animated: true, completion: nil)
     }
     
     func createLayout1(){
@@ -87,6 +110,7 @@ class ViewController: UIViewController {
             resetLayout()
             createLayout1()
             currentLayout = .layout1
+            restoreImage()
         }
         
     }
@@ -96,6 +120,7 @@ class ViewController: UIViewController {
             resetLayout()
             createLayout2()
             currentLayout = .layout2
+            restoreImage()
         }
     }
     
@@ -104,11 +129,31 @@ class ViewController: UIViewController {
             resetLayout()
             createLayout3()
             currentLayout = .layout3
+            restoreImage()
+        }
+    }
+    func restoreImage(){
+        for i in 1...4{
+//            if dictimage[i] = nil
+//            getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
+            
+            getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            dictImage[currentBtnTag] = image
+            getBtn(tag: currentBtnTag)?.setImage(image, for: .normal)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
     
-    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
+// share -> gestureSwipe et popup partage 
 
