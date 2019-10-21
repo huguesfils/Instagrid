@@ -32,6 +32,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         pickerController.sourceType = .photoLibrary
         pickerController.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clearView))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func clearView(_ sender: UIButton){
+        for i in 1...4{
+        getBtn(tag: i)?.setImage(UIImage(named: "Plus"), for: .normal)
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -134,10 +144,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     func restoreImage(){
         for i in 1...4{
-//            if dictimage[i] = nil
-//            getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
-            
-            getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
+            if dictImage[i] == nil{
+                getBtn(tag: i)?.setImage(UIImage(named: "Plus"), for: .normal)
+            }else{
+                getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
+            }
         }
     }
     
