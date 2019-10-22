@@ -18,12 +18,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var stackViewBottom: UIStackView!
     @IBOutlet weak var swipeLabel: UILabel!
     @IBOutlet weak var swipeChevron: UIImageView!
+    @IBOutlet weak var mainView: UIView!
+    
     
     private var currentLayout = Layout.layout1
     private var currentBtnTag = 0
     
     let pickerController = UIImagePickerController()
     var dictImage = [Int: UIImage]()
+    
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +171,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func getImage(_ : UIView) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: mainView.bounds.size)
+        let newImage = renderer.image { ctx in
+            mainView.drawHierarchy(in: mainView.bounds, afterScreenUpdates: true)
+        }
+        return newImage
+    }
+    
+    func shareImage (){
+        let newImage = self.getImage(mainView)
+        let item = [newImage]
+        let share = UIActivityViewController(activityItems: item, applicationActivities: present(item, animated: true))
+    
+        }
+    
+    
+    
+    
+    
+    
+    
 }
 
 // share -> gestureSwipe et popup partage 

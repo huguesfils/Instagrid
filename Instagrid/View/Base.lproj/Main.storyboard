@@ -279,7 +279,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="mainView" destination="hwj-s5-7Ge" id="3fb-0v-Nia"/>
                         <outlet property="stackViewBottom" destination="3OK-QA-mQX" id="aBz-PG-ei9"/>
+                        <outlet property="stackViewMain" destination="AoA-40-HXf" id="dxT-1z-UDK"/>
                         <outlet property="stackViewTop" destination="PlC-i3-cA2" id="44D-H8-Mew"/>
                         <outlet property="swipeChevron" destination="6an-Xw-YpQ" id="hyR-Yk-BgS"/>
                         <outlet property="swipeLabel" destination="54L-HV-DnK" id="115-GB-6EY"/>
