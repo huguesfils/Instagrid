@@ -38,12 +38,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.addGestureRecognizer(tap)
     }
     
-    @objc func clearView(_ sender: UIButton){
-        for i in 1...4{
-        getBtn(tag: i)?.setImage(UIImage(named: "Plus"), for: .normal)
-        }
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape{
             self.swipeLabel.text = "Swipe left to share"
@@ -76,13 +70,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func getBtn(tag: Int) -> UIButton? {
         for item in stackViewTop.subviews{
             if item.tag == tag{
-            return item as? UIButton
+                return item as? UIButton
             }
         }
         for item in stackViewBottom.subviews{
             if item.tag == tag{
-            return item as? UIButton
-           }
+                return item as? UIButton
+            }
         }
         return nil
     }
@@ -142,6 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             restoreImage()
         }
     }
+    
     func restoreImage(){
         for i in 1...4{
             if dictImage[i] == nil{
@@ -150,6 +145,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 getBtn(tag: i)?.setImage(dictImage[i], for: .normal)
             }
         }
+    }
+    
+    @objc func clearView(_ sender: UIButton){
+        for i in 1...4{
+            getBtn(tag: i)?.setImage(UIImage(named: "Plus"), for: .normal)
+        }
+        dictImage.removeAll()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
