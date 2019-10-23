@@ -38,9 +38,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         tap.numberOfTapsRequired = 2
         view.addGestureRecognizer(tap)
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeUpToShare))
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
         swipeUp.direction = .up
-        self.swipeLabel.addGestureRecognizer(swipeUp)
+        view.addGestureRecognizer(swipeUp)
+       
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -51,9 +52,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.swipeLabel.text = "Swipe up to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.up")
         }
+        if UIDevice.current.orientation.isLandscape{
+            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
+            swipeLeft.direction = .left
+            view.addGestureRecognizer(swipeLeft)
+        }
+        
     }
     
-    @objc func swipeUpToShare(){
+    @objc func swipeToShare(){
         shareImage()
     }
     
@@ -184,7 +191,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return newImage
     }
     
-    func shareImage (){
+    func shareImage(){
         let newImage = self.getImage()
         let item = [newImage]
         let share = UIActivityViewController(activityItems: item, applicationActivities: nil); present(share, animated: true)
@@ -192,5 +199,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 }
 
-// share -> gestureSwipe et popup partage 
 
