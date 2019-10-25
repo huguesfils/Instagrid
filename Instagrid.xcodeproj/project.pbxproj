@@ -59,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				657F405822F75EEB00D68829 /* Supporting Files */,
-				657F405622F75EB400D68829 /* Model */,
 				657F405522F75EA000D68829 /* View */,
 				657F405722F75EBC00D68829 /* Controller */,
 			);
@@ -72,13 +71,6 @@
 				657F404722F720F200D68829 /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		657F405622F75EB400D68829 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		657F405722F75EBC00D68829 /* Controller */ = {

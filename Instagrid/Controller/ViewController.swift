@@ -20,11 +20,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var swipeChevron: UIImageView!
     @IBOutlet weak var mainView: UIView!
     
+    
     private var currentLayout = Layout.layout1
     private var currentBtnTag = 0
     
     let pickerController = UIImagePickerController()
     var dictImage = [Int: UIImage]()
+    
+    var swipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,24 +41,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         tap.numberOfTapsRequired = 2
         view.addGestureRecognizer(tap)
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
-        swipeUp.direction = .up
-        view.addGestureRecognizer(swipeUp)
-       
+        swipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
+        view.addGestureRecognizer(swipe)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape{
             self.swipeLabel.text = "Swipe left to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.left")
+            swipe.direction = .left
         }else{
             self.swipeLabel.text = "Swipe up to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.up")
-        }
-        if UIDevice.current.orientation.isLandscape{
-            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
-            swipeLeft.direction = .left
-            view.addGestureRecognizer(swipeLeft)
+            swipe.direction = .up
         }
         
     }
@@ -196,6 +194,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let item = [newImage]
         let share = UIActivityViewController(activityItems: item, applicationActivities: nil); present(share, animated: true)
     }
+    
     
 }
 
