@@ -20,7 +20,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var swipeChevron: UIImageView!
     @IBOutlet weak var mainView: UIView!
     
-    
     private var currentLayout = Layout.layout1
     private var currentBtnTag = 0
     
@@ -28,6 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var dictImage = [Int: UIImage]()
     
     var swipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
+    var translationTransform: CGAffineTransform!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +37,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.sourceType = .photoLibrary
         pickerController.modalPresentationStyle = UIModalPresentationStyle.currentContext
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(clearView))
-        tap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(tap)
+        let tapToErase = UITapGestureRecognizer(target: self, action: #selector(clearView))
+        tapToErase.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tapToErase)
         
         swipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeToShare))
         view.addGestureRecognizer(swipe)
@@ -50,16 +50,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.swipeLabel.text = "Swipe left to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.left")
             swipe.direction = .left
+            translationTransform = CGAffineTransform(translationX: -1000, y: 0)
         }else{
             self.swipeLabel.text = "Swipe up to share"
             self.swipeChevron.image = UIImage(systemName: "chevron.up")
             swipe.direction = .up
+            translationTransform = CGAffineTransform(translationX: 0, y: -1000)
         }
-        
-    }
-    
-    @objc func swipeToShare(){
-        shareImage()
     }
     
     func resetLayout(){
@@ -195,7 +192,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let share = UIActivityViewController(activityItems: item, applicationActivities: nil); present(share, animated: true)
     }
     
-    
+    @objc func swipeToShare(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.mainView.transform = self.translationTransform
+        }, completion: { (success) in
+            if success {
+                for i in 1...4{
+                    self.getBtn(tag: i)?.setImage(UIImage(named: "Plus"), for: .normal)
+                }
+                self.dictImage.removeAll()
+                self.mainView.transform = .identity
+            }
+        })
+        shareImage()
+    }
 }
 
 
